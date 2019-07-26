@@ -12,3 +12,4 @@ applications:
     REGISTRATION_SERVER_ENDPOINT: https://registration-pal-sourabh.cfapps.io
   services:
   - tracker-timesheets-database
+  - tracker-service-registry
