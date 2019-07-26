@@ -5,11 +5,10 @@ applications:
   - route: registration-pal-sourabh.cfapps.io
   memory: 500
   disk_quota: 500M
-    instances: 1
-    env:
-      JAVA_OPTS: '-XX:MaxMetaspaceSize=80780K -Xss512k -Xmx200M -XX:ReservedCodeCacheSize=16M -XX:MaxDirectMemorySize=16M'
   instances: 1
   env:
+    JAVA_OPTS: '-XX:MaxMetaspaceSize=80780K -Xss512k -Xmx200M -XX:ReservedCodeCacheSize=16M -XX:MaxDirectMemorySize=16M'
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+    REGISTRATION_SERVER_ENDPOINT: https://registration-pal-sourabh.cfapps.io
   services:
   - tracker-registration-database
