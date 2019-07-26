@@ -3,7 +3,7 @@ applications:
   path: ./applications/timesheets-server/build/libs/timesheets-server.jar
   routes:
   - route: timesheets-pal-sourabh.cfapps.io
-  memory: 500
+  memory: 500M
   disk_quota: 500M
   instances: 1
   env:
