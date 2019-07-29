@@ -3,11 +3,15 @@ applications:
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
   - route: registration-pal-sourabh.cfapps.io
-  memory: 500M
-  disk_quota: 500M
+  memory: 300M
+  disk_quota: 300M
   instances: 1
   env:
-      JAVA_OPTS: '-XX:MaxMetaspaceSize=80780K -Xss512k -Xmx200M -XX:ReservedCodeCacheSize=16M -XX:MaxDirectMemorySize=16M'
+      JAVA_OPTS: '-XX:MaxMetaspaceSize=80780K -Xss512k -Xmx200M -XX:ReservedCodeCacheSize=16M -XX:MaxDirectMemorySize=16M -Dcom.sun.management.jmxremote
+                   -Dcom.sun.management.jmxremote.port=9010
+                   -Dcom.sun.management.jmxremote.local.only=false
+                   -Dcom.sun.management.jmxremote.authenticate=false
+                   -Dcom.sun.management.jmxremote.ssl=false '
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
   services:
   - tracker-registration-database
